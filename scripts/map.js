@@ -1,7 +1,6 @@
 var text = document.getElementById('textArea');
 var sumbit = document.getElementById('submitButtonArea');
 
-
 var brk = {
   "canPass": false,
   "draw": 'brick',
