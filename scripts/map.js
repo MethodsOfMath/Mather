@@ -1,5 +1,7 @@
 var text = document.getElementById('textArea');
 var sumbit = document.getElementById('submitButtonArea');
+var verBlks = 10;
+var horBlks = 20;
 
 
 var brk = {
@@ -123,8 +125,13 @@ function drawMap() {
       for(let x = 1; x <= horBlks; x++) {
         xi = x + mapX0;
         if (xi > -1 && xi < map[yi].length) {
-         mapOutput += '<img height=20 width=20 src="';
-         mapOutput += map[yi][xi].draw + '.png">';
+          if (xi = player.mapX && yi = player.mapY) {
+                        mapOutput += '<img height=20 width=20 src="images/map/';
+            mapOutput += 'player.png">';
+          } else{
+            mapOutput += '<img height=20 width=20 src="images/map/';
+            mapOutput += map[yi][xi].draw + '.png">';
+         }
         }
         mapOutput += "<br>";
       }
