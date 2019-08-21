@@ -6,13 +6,6 @@ var playArea = document.getElementById('playArea');
 var sumbit = document.getElementById('submitButtonArea');
 var textInput = document.getElementById('textInput');
 
-
-    
-
-
-
-
-
 // onScreen Keyboard
 
 function submitText() {
@@ -20,7 +13,8 @@ function submitText() {
     case 'name':
       player.name = enteredText;
       document.getElementById('name').innerHTML = player.name;
-      pickFace();
+      //pickFace();
+      isOK();
       break;
   }
 }
@@ -35,9 +29,10 @@ function deleteText() {
   }
 }
 
+// Upper Case Onscreen Keyboard
 function UConScreenKeyboard() {
-  var abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var thingie = '';
+  let abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let thingie = '';
   for (var i = 0; i < abc.length; i++) {
     abc[i] = abc[i].toUpperCase();
     thingie += '<button onclick="enterLetter(\''+ abc[i] + '\')">' + abc[i] + '</button>' ;
@@ -53,9 +48,10 @@ function UConScreenKeyboard() {
   sumbit.innerHTML = thingie;
 }
 
-function LConScreenKeyboard() {
-  var abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var thingie = '';
+// Lower Case Onscreen Keyboard
+function LConScreenKeyboard() { 
+  let abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let thingie = '';
   for (var i = 0; i < abc.length; i++) {
     thingie += '<button onclick="enterLetter(\''+ abc[i] + '\')">' + abc[i] + '</button>' ;
       /*
@@ -84,7 +80,7 @@ function enterLetter(l) {
 
 function pickFace() {
   text.innerHTML = 'Pick a face shape:';
-  var thingie = '<button onclick="setFaceShape(0)">()</button> '
+  let thingie = '<button onclick="setFaceShape(0)">()</button> '
   thingie += '<button onclick="setFaceShape(1)">( )</button>';
   thingie += '<button onclick="setFaceShape(2)">(&nbsp;&nbsp;)</button>';
   thingie += '<button onclick="setFaceShape(3)">(&nbsp;&nbsp;&nbsp;)</button>';
@@ -106,7 +102,7 @@ function enterName() {
 
 function isOK() {
     text.innerHTML = 'Is this OK?';
-    var thingie = '<button onclick="start()">YES</button> ';
+    let thingie = '<button onclick="start()">YES</button> ';
     thingie += '<button onclick="enterName()">NO</button> ';
     sumbit.innerHTML = thingie;
 }
@@ -114,7 +110,7 @@ function isOK() {
 
 function pickSkin() {
      text.innerHTML = 'Pick skin tone:';
-     var thingie = '<button class="skin0" onclick="setSkinTone(0)">_</button> ';
+     let thingie = '<button class="skin0" onclick="setSkinTone(0)">_</button> ';
      thingie += '<button class="skin1" onclick="setSkinTone(1)">_</button> ';
      thingie += '<button class="skin2" onclick="setSkinTone(2)">_</button> ';
      thingie += '<button class="skin3" onclick="setSkinTone(3)">_</button> ';
@@ -125,7 +121,7 @@ function pickSkin() {
 
 function pickHairColor() {
      text.innerHTML = 'Pick hair color:';
-     var thingie = '<button class="hair0" onclick="setHairColor(0)">_</button> ';
+     let thingie = '<button class="hair0" onclick="setHairColor(0)">_</button> ';
      thingie += '<button class="hair1" onclick="setHairColor(1)">_</button> ';
      thingie += '<button class="hair2" onclick="setHairColor(2)">_</button> ';
      thingie += '<button class="hair3" onclick="setHairColor(3)">_</button> ';
@@ -159,10 +155,9 @@ function setHairColor(o) {
   //reload();
 }
 
-
 function pickShirtColor() {
      text.innerHTML = 'Pick shirt color:';
-     var thingie = '<button class="shirt0" onclick="setShirtColor(0)">_</button> ';
+     let thingie = '<button class="shirt0" onclick="setShirtColor(0)">_</button> ';
      thingie += '<button class="shirt1" onclick="setShirtColor(1)">_</button> ';
      thingie += '<button class="shirt2" onclick="setShirtColor(2)">_</button> ';
      thingie += '<button class="pants3" onclick="setShirtColor(3)">_</button> ';
@@ -209,7 +204,7 @@ function setPantsColor(o) {
 
 function pickPantsColor() {
     text.innerHTML = 'Pick pants color:';
-    var thingie = '<button class="pants0" onclick="setPantsColor(0)">_</button> ';
+    let thingie = '<button class="pants0" onclick="setPantsColor(0)">_</button> ';
     thingie += '<button class="pants1" onclick="setPantsColor(1)">_</button> ';
     thingie += '<button class="pants2" onclick="setPantsColor(2)">_</button> ';
     thingie += '<button class="pants3" onclick="setPantsColor(3)">_</button> ';
@@ -221,7 +216,7 @@ function pickPantsColor() {
 
 function pickShirt() {
      text.innerHTML = 'Pick tshirt logo:';
-     var thingie = '<button onclick="setTshirt(2.7)">e</button> ';
+     let thingie = '<button onclick="setTshirt(2.7)">e</button> ';
      thingie += '<button onclick="setTshirt(3.14)">π</button> ';
      thingie += '<button onclick="setTshirt(6.2)">τ</button> ';
      thingie += '<button onclick="setTshirt(0)">ϕ</button> ';
