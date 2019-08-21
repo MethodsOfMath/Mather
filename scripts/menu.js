@@ -10,6 +10,7 @@ function up() {
       text.innerHTML = 'Stay off the grass';
       }
      player.mapY--;
+     drawMap();
    } else {
      text.innerHTML = 'Find another route.';
    }
@@ -25,6 +26,7 @@ function down() {
         text.innerHTML =  'Stay off the grass';
       }
      player.mapY++;
+     drawMap();
 
    } else {
      text.innerHTML = 'Find another route.';
@@ -40,6 +42,8 @@ function left() {
         text.innerHTML =  'Stay off the grass';
      }
      player.mapX--;
+     drawMap();
+      
    } else {
      text.innerHTML = 'Find another route.';
    }
@@ -54,6 +58,7 @@ function right() {
        text.innerHTML =  'Stay off the grass';
      }
      player.mapX++;
+     drawMap();
    } else {     
      text.innerHTML = 'Find another route.';
    }
@@ -72,14 +77,16 @@ function arrows() {
    thingie += '<td><button onclick="right()">⇒</button></td>';
    thingie += '<td><button onclick="check()">check</button></td>';
    thingie += '<td><button onclick="stats()">status</button></td>';
-   thingie += '</tr></table>';
-  
+   thingie += '</tr></table>';  
+
    sumbit.innerHTML = thingie;
+      drawMap();
 }
 
 function start() {
   text.innerHTML = 'In the year 202X ...';
   arrows();
+      drawMap();
 }
 
 function check() {
