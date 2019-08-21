@@ -114,8 +114,8 @@ var map = [
 
 function drawMap() {
   let mapOutput = "";
-  let mapX0 = player.mapX - player.x/20;
-  let mapY0 = player.mapY - player.y/20;
+  let mapX0 = player.mapX - Math.floor(horBlks/2);
+  let mapY0 = player.mapY - Math.floor(verBlks/2);;
   let yi = 1;
   let xi = 1;
   
@@ -126,8 +126,8 @@ function drawMap() {
         xi = x + mapX0;
         if (xi > -1 && xi < map[yi].length) {
           if (xi = player.mapX && yi = player.mapY) {
-                        mapOutput += '<img height=20 width=20 src="images/map/';
-            mapOutput += 'player.png">';
+             mapOutput += '<img height=20 width=20 src="images/map/';
+             mapOutput += 'player.png">';
           } else{
             mapOutput += '<img height=20 width=20 src="images/map/';
             mapOutput += map[yi][xi].draw + '.png">';
