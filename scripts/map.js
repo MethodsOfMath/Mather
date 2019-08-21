@@ -121,12 +121,12 @@ function drawMap() {
   
   for(let y = 1; y <= verBlks; y++) {
     yi = y + mapY0;
-    if (yi > -1 && yi < mapD.length) {
+    if (yi > -1 && yi < map.length) {
       for(let x = 1; x <= horBlks; x++) {
         xi = x + mapX0;
-        if (xi > -1 && xi < mapD[yi].length) {
+        if (xi > -1 && xi < map[yi].length) {
          mapOutput += '<img height=20 width=20 src="';
-         mapOutput += mapD[yi][xi].draw + '.png">';
+         mapOutput += map[yi][xi].draw + '.png">';
         }
         mapOutput += "<br>";
       }
