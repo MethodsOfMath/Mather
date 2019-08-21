@@ -111,3 +111,25 @@ var map = {
   'rows':17,
   'test':'test'
 };
+
+function drawMap() {
+  let mapOutput = "";
+  let mapX0 = player.mapX - player.x/20;
+  let mapY0 = player.mapY - player.y/20;
+  let yi = 1;
+  let xi = 1;
+  
+  for(let y = 1; y <= verBlks; y++) {
+    yi = y + mapY0;
+    if (yi > -1 && yi < mapD.length) {
+      for(let x = 1; x <= horBlks; x++) {
+        xi = x + mapX0;
+        if (xi > -1 && xi < mapD[yi].length) {
+         mapOutput += '<img height=20 width=20 src="';
+         mapOutput += mapD[yi][xi].draw + '.png">';
+        }
+        mapOutput += "<br>";
+      }
+    }
+   document.getElementById('mapArea').innerHTML = mapOutput;
+  }
