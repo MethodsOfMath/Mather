@@ -15,6 +15,7 @@ function submitText() {
       document.getElementById('name').innerHTML = player.name;
       //pickFace();
       isOK();
+      drawMap();
       break;
   }
 }
@@ -90,6 +91,7 @@ function pickFace() {
 
 
 function enterName() {
+  drawMap();
   command = 'Enter name: ';
   text.innerHTML = command;
   thingToBeEntered = 'name';
