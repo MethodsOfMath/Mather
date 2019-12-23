@@ -3,7 +3,6 @@ var sumbit = document.getElementById('submitButtonArea');
 var verBlks = 10;
 var horBlks = 20;
 
-
 var brk = {
   "canPass": false,
   "draw": 'brick',
